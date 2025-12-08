@@ -1,4 +1,4 @@
-package tn.esprit.spring.entities;
+package tn. esprit.spring.entities;
 
 
 import java.io.Serializable;
@@ -12,7 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence. TemporalType;
 
 @Entity
 @Table(name = "T_USER")
@@ -23,26 +23,26 @@ public class User implements Serializable {
 
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private Long id;   
-	
-	private String firstName; 
-	
+	private Long id;
+
+	private String firstName;
+
 	private String lastName;
-	
+
 	@Temporal(TemporalType.DATE)
 	private Date dateNaissance;
-	
+
 	@Enumerated(EnumType.STRING)
-	Role role; 
-	
-	public User() {	}
+	Role role;
+
+	public User() { }
 
 	public User(String firstName, String lastName, Date dateNaissance, Role role) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.dateNaissance = dateNaissance;
-		this.role = role;
+		this. role = role;
 	}
 
 
@@ -66,28 +66,42 @@ public class User implements Serializable {
 	public Long getId() {
 		return id;
 	}
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getFirstName() {
+		return firstName;
 	}
+	
+	public void setFirstName(String firstName) {
+		this. firstName = firstName;
+	}
+
+	public String getLastName() {
+    return lastName + "-v1";
+}
+	
 	public void setLastName(String lName) {
 		this.lastName = lName;
 	}
+	
 	public Date getDateNaissance() {
 		return dateNaissance;
 	}
+	
 	public void setDateNaissance(Date dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
+	
 	public Role getRole() {
 		return role;
 	}
+	
 	public void setRole(Role role) {
 		this.role = role;
 	}
-	
+
 
 }
