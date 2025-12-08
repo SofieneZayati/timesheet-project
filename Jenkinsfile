@@ -44,7 +44,7 @@ pipeline {
                 echo 'Deploying to Kubernetes...'
                 sh """
                     kubectl set image deployment/timesheet-dep \
-                    timesheet=${DOCKER_IMAGE}: ${IMAGE_VERSION} \
+                    timesheet=${DOCKER_IMAGE}:${IMAGE_VERSION} \
                     -n chap4
                 """
                 
